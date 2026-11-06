@@ -115,9 +115,10 @@ local config = {
 	-- │                       APPEARANCE                        │
 	-- ╰─────────────────────────────────────────────────────────╯
 	-- FONT
-	font_size = 16,
+	font_size = 17,
 	font = wezterm.font_with_fallback(fonts), -- 见上方平台判断
-	line_height = 1.1,
+	line_height = 1.25,
+	cell_width = 1.1,              -- 单元格横向宽度，缓解字体过窄
 
 	-- COLOR SCHEME
 	-- 固定使用 Catppuccin Mocha（深色）

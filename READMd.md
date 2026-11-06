@@ -30,6 +30,27 @@ ln -s "$HOME/wezterm" "$HOME/.config/wezterm"
 
 应用后：
 
+### 安装配置使用的 Nerd Font
+
+当前配置优先使用 `JetBrainsMono Nerd Font Mono`。如果系统没有安装，
+WezTerm 会弹出 `Configuration Error` 并回退到其他字体。
+
+Manjaro / Arch Linux：
+
+```bash
+sudo pacman -S --needed ttf-jetbrains-mono-nerd
+fc-cache -fv
+```
+
+macOS（Homebrew）：
+
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+其他系统请安装 `JetBrainsMono Nerd Font Mono`，安装后刷新字体缓存并重启 WezTerm。
+
+
 ```bash
 # 检查配置语法和键位加载
 wezterm --config-file "$HOME/wezterm/wezterm.lua" show-keys >/dev/null

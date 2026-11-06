@@ -6,6 +6,9 @@
 
 ```text
 wezterm.lua
+fonts/
+  README.md
+  JetBrainsMonoNerdFontMono-*.ttf
 utils/
   background.lua
   color_scheme.lua
@@ -38,13 +41,15 @@ docs/
 - 中文回退字体 `Microsoft YaHei UI`
 - 符号回退字体 `Segoe UI Symbol`
 
-推荐安装官方 Nerd Fonts v3.5.1：
+仓库的 `fonts/` 目录已内置 JetBrains Mono Nerd Font Mono 常用字重，
+WezTerm 会通过 `font_dirs` 从配置目录直接加载，无需先安装到系统。
+字体来源、许可证和可选系统安装方法见 `fonts/README.md`。
+
+Windows 如需给其他应用安装字体，可运行：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-nerd-font.ps1
 ```
-
-安装完成后重启 WezTerm，让 DirectWrite 刷新字体缓存。
 
 ## SSH 跳板机
 

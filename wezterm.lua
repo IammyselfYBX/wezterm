@@ -108,6 +108,7 @@ local config = {
 	enable_kitty_graphics = true,   -- 【必须】允许远程主机使用 Kitty 图像协议
 	custom_block_glyphs = false,    -- 使用 Nerd Font 真实字形，避免图标/图片变成方框
 	term = "xterm-256color",
+	font_dirs = { wezterm.config_dir .. "/fonts" }, -- 从配置目录加载内置字体
 	default_prog = default_prog,    -- 见上方平台判断
 	audible_bell = "Disabled",      -- 取消响铃
 

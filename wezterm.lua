@@ -69,27 +69,27 @@ end
 
 -- ----------------------------------------------------------------------------
 -- 字体：按平台提供回退列表（列表第一个为优先字体，未安装会自动回退）
---   Windows → JetBrains Mono / Cascadia Code / 微软雅黑
+--   Windows → JetBrainsMono Nerd Font Mono / 微软雅黑 / Segoe UI Symbol
 --   macOS   → JetBrains Mono / Sarasa Term SC Nerd / SF Pro / 苹方
 --   Linux   → JetBrains Mono / Noto Sans Mono CJK SC / Noto Sans CJK SC
 -- ----------------------------------------------------------------------------
 local font_families
 if is_windows then
 	font_families = {
-		"JetBrains Mono",
-		"Cascadia Code",
-		"Microsoft YaHei",
+		"JetBrainsMono Nerd Font Mono",
+		"Microsoft YaHei UI",
+		"Segoe UI Symbol",
 	}
 elseif is_macos then
 	font_families = {
-		"JetBrains Mono",
+		"JetBrainsMono Nerd Font Mono",
 		"Sarasa Term SC Nerd",
 		"SF Pro",
 		"PingFang SC",
 	}
 else
 	font_families = {
-		"JetBrains Mono",
+		"JetBrainsMono Nerd Font Mono",
 		"Noto Sans Mono CJK SC",
 		"Noto Sans CJK SC",
 	}
@@ -106,6 +106,7 @@ local config = {
 	check_for_updates = false,      -- 关闭自动检查更新
 	enable_kitty_keyboard = true,   -- 启用 Kitty 键盘协议，远程主机可使用更多快捷键
 	enable_kitty_graphics = true,   -- 【必须】允许远程主机使用 Kitty 图像协议
+	custom_block_glyphs = false,    -- 使用 Nerd Font 真实字形，避免图标/图片变成方框
 	term = "xterm-256color",
 	default_prog = default_prog,    -- 见上方平台判断
 	audible_bell = "Disabled",      -- 取消响铃
@@ -125,6 +126,9 @@ local config = {
 	--   color_scheme = require("utils/color_scheme").get_color_scheme()
 	set_environment_variables = {
 		BAT_THEME = "Catppuccin-mocha", -- 让 bat 使用匹配的主题
+		TERM_PROGRAM = "WezTerm",
+		LC_TERMINAL = "WezTerm",
+		COLORTERM = "truecolor",
 	},
 
 	-- WINDOW
